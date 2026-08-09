@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AmenitiesRouteImport } from './routes/amenities'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as LocationRouteImport } from './routes/location'
+import { Route as MyBookingRouteImport } from './routes/my-booking'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as RoomsIndexRouteImport } from './routes/rooms.index'
+import { Route as RoomsSlugRouteImport } from './routes/rooms.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AmenitiesRoute = AmenitiesRouteImport.update({
+  id: '/amenities',
+  path: '/amenities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationRoute = LocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyBookingRoute = MyBookingRouteImport.update({
+  id: '/my-booking',
+  path: '/my-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoomsIndexRoute = RoomsIndexRouteImport.update({
+  id: '/rooms/',
+  path: '/rooms/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoomsSlugRoute = RoomsSlugRouteImport.update({
+  id: '/rooms/$slug',
+  path: '/rooms/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/my-booking': typeof MyBookingRoute
+  '/reviews': typeof ReviewsRoute
+  '/rooms/$slug': typeof RoomsSlugRoute
+  '/rooms/': typeof RoomsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/my-booking': typeof MyBookingRoute
+  '/reviews': typeof ReviewsRoute
+  '/rooms/$slug': typeof RoomsSlugRoute
+  '/rooms': typeof RoomsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/amenities': typeof AmenitiesRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/location': typeof LocationRoute
+  '/my-booking': typeof MyBookingRoute
+  '/reviews': typeof ReviewsRoute
+  '/rooms/$slug': typeof RoomsSlugRoute
+  '/rooms/': typeof RoomsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/amenities'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/location'
+    | '/my-booking'
+    | '/reviews'
+    | '/rooms/$slug'
+    | '/rooms/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/amenities'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/location'
+    | '/my-booking'
+    | '/reviews'
+    | '/rooms/$slug'
+    | '/rooms'
+  id:
+    | '__root__'
+    | '/'
+    | '/amenities'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/location'
+    | '/my-booking'
+    | '/reviews'
+    | '/rooms/$slug'
+    | '/rooms/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmenitiesRoute: typeof AmenitiesRoute
+  BookRoute: typeof BookRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
+  LocationRoute: typeof LocationRoute
+  MyBookingRoute: typeof MyBookingRoute
+  ReviewsRoute: typeof ReviewsRoute
+  RoomsSlugRoute: typeof RoomsSlugRoute
+  RoomsIndexRoute: typeof RoomsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +182,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/amenities': {
+      id: '/amenities'
+      path: '/amenities'
+      fullPath: '/amenities'
+      preLoaderRoute: typeof AmenitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location': {
+      id: '/location'
+      path: '/location'
+      fullPath: '/location'
+      preLoaderRoute: typeof LocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-booking': {
+      id: '/my-booking'
+      path: '/my-booking'
+      fullPath: '/my-booking'
+      preLoaderRoute: typeof MyBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rooms/': {
+      id: '/rooms/'
+      path: '/rooms'
+      fullPath: '/rooms/'
+      preLoaderRoute: typeof RoomsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rooms/$slug': {
+      id: '/rooms/$slug'
+      path: '/rooms/$slug'
+      fullPath: '/rooms/$slug'
+      preLoaderRoute: typeof RoomsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmenitiesRoute: AmenitiesRoute,
+  BookRoute: BookRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
+  LocationRoute: LocationRoute,
+  MyBookingRoute: MyBookingRoute,
+  ReviewsRoute: ReviewsRoute,
+  RoomsSlugRoute: RoomsSlugRoute,
+  RoomsIndexRoute: RoomsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
